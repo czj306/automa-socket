@@ -1,0 +1,21 @@
+{
+    "extVersion": "0.12.1",
+    "name": "SetTimeUploadOBS",
+    "icon": "riGlobalLine",
+    "version": "0.12.1",
+    "drawflow": "{\"drawflow\":{\"Home\":{\"data\":{\"8777653e-09ea-4fdc-881e-9348d9c41780\":{\"name\":\"trigger\",\"description\":\"Block where workflow will start executing\",\"icon\":\"riFlashlightLine\",\"component\":\"BlockBasic\",\"editComponent\":\"EditTrigger\",\"category\":\"general\",\"inputs\":{},\"docs\":true,\"outputs\":{\"output_1\":{\"connections\":[{\"node\":\"db7b5ff3-a91b-459b-9a7a-1938b6476ad6\",\"output\":\"input_1\"}]}},\"allowedInputs\":true,\"maxConnection\":1,\"data\":{\"description\":\"每间隔2小时并延迟20分钟执行\",\"type\":\"interval\",\"interval\":120,\"delay\":20,\"date\":\"\",\"time\":\"10:00\",\"url\":\"\",\"shortcut\":\"\",\"activeInInput\":false,\"isUrlRegex\":false,\"days\":[0,1,2,3,4,5,6]},\"id\":\"8777653e-09ea-4fdc-881e-9348d9c41780\",\"class\":\"trigger\",\"html\":\"BlockBasic\",\"typenode\":\"vue\",\"pos_x\":36,\"pos_y\":270},\"db7b5ff3-a91b-459b-9a7a-1938b6476ad6\":{\"name\":\"new-tab\",\"description\":\"Create a new tab\",\"icon\":\"riGlobalLine\",\"component\":\"BlockBasic\",\"editComponent\":\"EditNewTab\",\"category\":\"browser\",\"inputs\":{\"input_1\":{\"connections\":[{\"node\":\"8777653e-09ea-4fdc-881e-9348d9c41780\",\"input\":\"output_1\"}]}},\"outputs\":{\"output_1\":{\"connections\":[{\"node\":\"eb9814ce-8255-4b05-8a7b-dfbf3e111d62\",\"output\":\"input_1\"}]}},\"allowedInputs\":true,\"maxConnection\":1,\"data\":{\"description\":\"亚马逊首页\",\"url\":\"https://sellercentral.amazon.com/gp/homepage.html/ref=xx_home_logo_xx\",\"active\":true,\"inGroup\":false,\"updatePrevTab\":false},\"id\":\"db7b5ff3-a91b-459b-9a7a-1938b6476ad6\",\"class\":\"new-tab\",\"html\":\"BlockBasic\",\"typenode\":\"vue\",\"pos_x\":372,\"pos_y\":387},\"eb9814ce-8255-4b05-8a7b-dfbf3e111d62\":{\"id\":\"eb9814ce-8255-4b05-8a7b-dfbf3e111d62\",\"name\":\"delay\",\"data\":{\"time\":500},\"class\":\"delay\",\"html\":\"BlockDelay\",\"typenode\":\"vue\",\"inputs\":{\"input_1\":{\"connections\":[{\"node\":\"db7b5ff3-a91b-459b-9a7a-1938b6476ad6\",\"input\":\"output_1\"}]}},\"outputs\":{\"output_1\":{\"connections\":[{\"node\":\"706c1f01-c9e3-40b9-b140-d03539819b70\",\"output\":\"input_1\"}]}},\"pos_x\":360,\"pos_y\":105},\"706c1f01-c9e3-40b9-b140-d03539819b70\":{\"id\":\"706c1f01-c9e3-40b9-b140-d03539819b70\",\"name\":\"execute-workflow\",\"data\":{\"workflowId\":\"1NlZKXLioNd8W9FBO1-HB\",\"globalData\":\"\"},\"class\":\"execute-workflow\",\"html\":\"BlockBasic\",\"typenode\":\"vue\",\"inputs\":{\"input_1\":{\"connections\":[{\"node\":\"eb9814ce-8255-4b05-8a7b-dfbf3e111d62\",\"input\":\"output_1\"}]}},\"outputs\":{\"output_1\":{\"connections\":[{\"node\":\"37c565e1-9eaf-4f8c-99d1-8ca9fdeae729\",\"output\":\"input_1\"}]}},\"pos_x\":602,\"pos_y\":304},\"37c565e1-9eaf-4f8c-99d1-8ca9fdeae729\":{\"id\":\"37c565e1-9eaf-4f8c-99d1-8ca9fdeae729\",\"name\":\"close-tab\",\"data\":{\"url\":\"\",\"activeTab\":true},\"class\":\"close-tab\",\"html\":\"BlockBasic\",\"typenode\":\"vue\",\"inputs\":{\"input_1\":{\"connections\":[{\"node\":\"706c1f01-c9e3-40b9-b140-d03539819b70\",\"input\":\"output_1\"}]}},\"outputs\":{\"output_1\":{\"connections\":[]}},\"pos_x\":958,\"pos_y\":325}}}}}",
+    "settings": {
+        "blockDelay": 0,
+        "onError": "stop-workflow",
+        "saveLog": true,
+        "timeout": 120000
+    },
+    "globalData": "",
+    "description": "定时下载文件更新至OBS",
+    "dataColumns": [
+        {
+            "name": "id",
+            "type": "array"
+        }
+    ]
+}

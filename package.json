@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "ali-oss": "^6.16.0",
+    "cors": "^2.8.5",
+    "esdk-obs-nodejs": "^3.21.6",
+    "express": "^4.17.2",
+    "socket.io": "^4.4.1"
+  }
+}
